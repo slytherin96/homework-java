@@ -14,22 +14,24 @@ public class Robot implements Participant {
     public boolean jump(int height) {
         if (jumpWall>=height) {
             System.out.format("%s успешно пробежал %s %n", name, jumpWall);
+            return true;
         }
         else {
             System.out.format("%s не удалось пробежать %s %n", name, jumpWall);
+            return false;
         }
-        return jumpWall>=height;
     }
 
     @Override
     public boolean run(int len) {
         if (runs>=len) {
             System.out.format("%s успешно прыгнул %s %n", name, runs);
+            return true;
         }
         else {
             System.out.format("%s не удалось прыгнуть %s %n", name, runs);
+            return false;
         }
-        return runs>=len;
     }
 
     public String getName() {

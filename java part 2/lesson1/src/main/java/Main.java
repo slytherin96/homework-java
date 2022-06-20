@@ -15,7 +15,7 @@ public class Main {
 
         Participant[] participants = {cat, human, robot};
         Obstacle[] obstacles = {wallBig, road, wall};
-        
+
         for  (Participant participant:participants){
             for (int i=0; i<obstacles.length; i++){
                 if (!obstacles[i].obstacle(participant)){
