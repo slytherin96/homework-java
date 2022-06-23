@@ -1,15 +1,23 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Main {
-    public static void main(String[] args) {
-        String[][] matrix;
+    private static String[][] matrix;
+    private static CreateMatrix createMatrix ;
 
-        CreateMatrix createMatrix = new CreateMatrix(4);
+    public static void main(String[] args) {
+
+        try {
+            createMatrix = new CreateMatrix(4);
+        } catch (MyArraySizeException e){
+            e.printStackTrace();
+        }
+
         matrix = createMatrix.generationMatrix();
 
         SumArrayElements sumArrayElements = new SumArrayElements();
-       sumArrayElements.sumElements(matrix);
+        try {
+            sumArrayElements.sumElements(matrix);
+        }catch (MyArrayDataException e){
+            e.printStackTrace();
+        }
+
 }
 }

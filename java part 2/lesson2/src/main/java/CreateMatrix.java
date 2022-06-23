@@ -10,19 +10,13 @@ public class CreateMatrix {
 
 
      }
-    public String[][] generationMatrix(){
+    public String[][] generationMatrix()  throws MyArraySizeException{
         Random random = new Random();
         matrix = new String[size][size];
 
-        try {
             if (size !=4){
-                throw new MyArraySizeException(size);
+                throw new MyArraySizeException(size) ;
             }
-        } catch (MyArraySizeException e) {
-            e.printStackTrace();
-
-        }
-
         for (int i = 0; i < matrix.length; i++){
             for (int j = 0; j < matrix[i].length; j++){
                 int num = random.nextInt(65,90);
