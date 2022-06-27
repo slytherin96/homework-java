@@ -6,13 +6,13 @@ import java.util.Map;
 import java.util.Set;
 
 public class CreatePhoneBook {
-    private HashSet<Integer> phones;
-    private Map<String, Set<Integer>> phoneBook;
+    private HashSet<String> phones;
+    private Map<String, Set<String>> phoneBook;
     CreatePhoneBook(){
         phoneBook = new HashMap<>();
     }
 
-    public void add(String name, int phone){
+    public void add(String name, String phone){
 
         phones = new HashSet<>();
         if (phoneBook.containsKey(name)){
