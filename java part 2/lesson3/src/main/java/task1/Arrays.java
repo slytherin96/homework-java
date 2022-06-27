@@ -17,7 +17,7 @@ public class Arrays {
             if (!value.equals(word) ) {
                 System.out.println(String.format("%s:%s",value,count));
                 count=0;
-            }
+            } 
             value=word;
             count+=1;
         }
