@@ -5,15 +5,15 @@ public class Main {
     private static float[] arrayPart;
 
     public static void main(String[] args) {
-        CreateArrays createArrayFull = new CreateArrays(10000000);
-        arrayFull=createArrayFull.create();
-        createArrayFull.processingArraysFull(arrayFull);
+        ProcessingArrays processingArrayFull = new ProcessingArrays(10000000);
+        arrayFull=processingArrayFull.create();
+        processingArrayFull.processingArraysFull(arrayFull);
 
-        CreateArrays createArraysarrayPart = new CreateArrays(10000000);
-        arrayPart=createArraysarrayPart.create();
+        ProcessingArrays processingArraysarrayPart = new ProcessingArrays(10000000);
+        arrayPart=processingArraysarrayPart.create();
 
         try {
-            createArraysarrayPart.processingArraysPart(arrayPart);
+            processingArraysarrayPart.processingArraysPart(arrayPart);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

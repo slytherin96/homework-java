@@ -1,4 +1,6 @@
-public class CreateArrays {
+import java.util.Arrays;
+
+public class ProcessingArrays {
     private final int SIZE;
     private final int H;
     private float[] arr;
@@ -6,7 +8,7 @@ public class CreateArrays {
     private float[] arrayPart1;
     private float[] arrayPart2;
 
-    CreateArrays(int size){
+    ProcessingArrays(int size){
         this.SIZE = size;
         this.arr = new float[SIZE];
         this.H = SIZE/2;
@@ -21,25 +23,28 @@ public class CreateArrays {
         return arr;
     }
 
+    private static float[] calculation(float[] array, int h) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (float) (array[i] * Math.sin(0.2f + h / 5) * Math.cos(0.2f + h / 5) * Math.cos(0.4f + h / 2));
+            h++;
+        }
+        return array;
+    }
     public void processingArraysFull(float[] array){
         time = System.currentTimeMillis();
-        СalculationFormula calculationFormulaFull= new СalculationFormula();
-        calculationFormulaFull.calculation(array);
+        array=calculation(array,0);
         System.out.println("Full "+(System.currentTimeMillis() - time));
 
     }
 
-    public void processingArraysPart(float[] array) throws InterruptedException {
+   public void processingArraysPart(float[] array) throws InterruptedException {
         time = System.currentTimeMillis();
 
         System.arraycopy(array, 0, arrayPart1, 0, H);
         System.arraycopy(array, H, arrayPart2, 0, H);
 
-        СalculationFormula calculationFormulaPart1= new СalculationFormula();
-        СalculationFormula calculationFormulaPart2= new СalculationFormula();
-
-        Thread t1 = new Thread(() -> arrayPart1 = calculationFormulaPart1.calculation(arrayPart1));
-        Thread t2 = new Thread(() -> arrayPart2 = calculationFormulaPart2.calculation(arrayPart2));
+        Thread t1 = new Thread(() -> arrayPart1 = calculation(arrayPart1,0));
+        Thread t2 = new Thread(() -> arrayPart2 = calculation(arrayPart2,H));
 
         t1.start();
         t2.start();
