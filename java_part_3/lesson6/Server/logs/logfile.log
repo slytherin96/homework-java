@@ -1,0 +1,12 @@
+INFO  2022-08-22 21:59:21 [main] Server.MyServer (MyServer.java:39) -CЕРВЕР ЗАПУЩЕН!
+INFO  2022-08-22 21:59:21 [main] Server.MyServer (MyServer.java:57) -Ожидание клиента...
+INFO  2022-08-22 21:59:24 [main] Server.MyServer (MyServer.java:59) -Клиент подключился!
+INFO  2022-08-22 21:59:24 [main] Server.MyServer (MyServer.java:57) -Ожидание клиента...
+INFO  2022-08-22 21:59:29 [Thread-0] Server.handlers.ClientHandler (ClientHandler.java:128) -Пользователь Мартин_Лютер_Кот подключился к чату
+INFO  2022-08-22 21:59:34 [main] Server.MyServer (MyServer.java:59) -Клиент подключился!
+INFO  2022-08-22 21:59:34 [main] Server.MyServer (MyServer.java:57) -Ожидание клиента...
+INFO  2022-08-22 21:59:40 [Thread-1] Server.handlers.ClientHandler (ClientHandler.java:128) -Пользователь Гендальф_Белый подключился к чату
+INFO  2022-08-22 21:59:44 [Thread-1] Server.handlers.ClientHandler (ClientHandler.java:147) -message | Гендальф_Белый: /pm Мартин_Лютер_Кот ff
+INFO  2022-08-22 21:59:48 [Thread-0] Server.handlers.ClientHandler (ClientHandler.java:147) -message | Мартин_Лютер_Кот: /pm Гендальф_Белый ff
+INFO  2022-08-22 21:59:51 [Thread-0] Server.handlers.ClientHandler (ClientHandler.java:53) -Пользователь Мартин_Лютер_Кот отключился от чата
+INFO  2022-08-22 21:59:53 [Thread-1] Server.handlers.ClientHandler (ClientHandler.java:53) -Пользователь Гендальф_Белый отключился от чата
