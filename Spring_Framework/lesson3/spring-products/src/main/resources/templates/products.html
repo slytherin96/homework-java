@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Students page</title>
+</head>
+<body>
+<table>
+    <tr th:each="product: ${products}">
+        <td th:text="${product.id}" />
+        <td th:text="${product.title}" />
+        <td th:text="${product.cost}" />
+    </tr>
+</table>
+
+<h1>Total: <span th:text="${products.size()}"/> </h1>
+</body>
+</html>
