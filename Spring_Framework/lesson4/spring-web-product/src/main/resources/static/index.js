@@ -18,7 +18,7 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     $scope.changeScore = function (productId, delta) {
         $http({
             url: contextPath + '/products/change_score',
-            method: 'GET',
+            method: 'POST',
             params: {
                 productId: productId,
                 delta: delta
@@ -31,7 +31,7 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     $scope.addProduct = function (id, title, cost) {
         $http({
             url: contextPath + '/products/add',
-            method: 'GET',
+            method: 'POST',
             params: {
                 id: id,
                 title: title,

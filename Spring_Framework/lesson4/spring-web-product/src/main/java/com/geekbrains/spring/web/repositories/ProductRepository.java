@@ -33,7 +33,9 @@ public class ProductRepository {
     }
 
     public void addById(Long id, String title, Double cost){
-        products.add(new Product(id, title, cost));
+        if (products.stream().filter(p -> p.getId().equals(id)).findFirst().isEmpty()) {
+            products.add(new Product(id, title, cost));
+        }
     }
 
     public Product findById(Long id) {

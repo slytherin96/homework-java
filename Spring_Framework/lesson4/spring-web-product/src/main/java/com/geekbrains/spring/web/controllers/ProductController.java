@@ -2,10 +2,7 @@ package com.geekbrains.spring.web.controllers;
 
 import com.geekbrains.spring.web.data.Product;
 import com.geekbrains.spring.web.services.ProductService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,12 +24,12 @@ public class ProductController {
         productService.deleteById(id);
     }
 
-    @GetMapping("/products/change_score")
+    @PostMapping("/products/change_score")
     public void changeScore(@RequestParam Long productId, @RequestParam Integer delta) {
         productService.changeScore(productId, delta);
     }
 
-    @GetMapping("/products/add")
+    @PostMapping("/products/add")
     public void addById(@RequestParam Long id,@RequestParam String title,@RequestParam Double cost) {
         productService.addById(id, title, cost);
     }
