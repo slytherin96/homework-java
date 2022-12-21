@@ -4,7 +4,6 @@ import org.hibernate.Session;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-
 @Component
 public class ProductDaoImpl implements ProductDao {
     private SessionFactoryUtils sessionFactoryUtils;
@@ -15,7 +14,6 @@ public class ProductDaoImpl implements ProductDao {
 
         this.sessionFactoryUtils = sessionFactoryUtils;
     }
-
 
     @Override
     public Product findById(Long id) {
