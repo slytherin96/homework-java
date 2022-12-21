@@ -12,13 +12,11 @@ public class SessionFactoryUtils {
 
     private SessionFactory factory;
 
-    @PostConstruct
-    public void init() {
-        factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .buildSessionFactory();
-
-    }
+   SessionFactoryUtils (){
+       factory = new Configuration()
+               .configure("hibernate.cfg.xml")
+               .buildSessionFactory();
+   }
 
     public Session getSession() {
         return factory.getCurrentSession();
