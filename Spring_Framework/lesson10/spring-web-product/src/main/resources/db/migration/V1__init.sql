@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS products (id bigserial, title VARCHAR(255), cost int, PRIMARY KEY (id));
+INSERT INTO products (title, cost) VALUES ('milk', 35), ('cheese', 50), ('sausage', 60), ('ketchup', 70), ('mayonnaise', 100);
